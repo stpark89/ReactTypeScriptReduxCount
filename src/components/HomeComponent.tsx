@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../modules";
-import { increment, decrement } from "../modules/CounterAction";
+import { increment, decrement, setCount } from "../modules/CounterAction";
 
 const HomeComponent = () => {
   const dispatch = useDispatch();
@@ -13,6 +13,11 @@ const HomeComponent = () => {
 
   const decrementFn = () => {
     dispatch(decrement(count));
+  };
+
+  const changeCount = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const setCountValue: number = Number(e.currentTarget.value);
+    dispatch(setCount(setCountValue));
   };
 
   return (
@@ -29,6 +34,15 @@ const HomeComponent = () => {
           <button className="btn btn-success" onClick={decrementFn}>
             -
           </button>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-sm-12 text-center">
+          <input
+            type="number"
+            onChange={changeCount}
+            className="form-control"
+          />
         </div>
       </div>
     </div>

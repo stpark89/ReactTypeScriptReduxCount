@@ -30,7 +30,7 @@ export type ADDRESS_ACTION = getListAction;
 const ADDRESS_SWITCH = (
   state: actionState = initialState,
   action: ADDRESS_ACTION
-) => {
+): actionState => {
   switch (action.type) {
     case ADDRESS_ACTION_TYPE.GETLIST:
       console.log("ADDRESS_ACTION_TYPE.GETLIST 호출");
