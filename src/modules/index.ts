@@ -1,10 +1,11 @@
 import { combineReducers } from "redux";
 import COUNTER_SWITCH from "./CounterAction";
+import ADDRESS_SWITCH from "./AddressAction";
 
 // RootReducer 생성
 
 // 내가 만들었던  action swich 하는 Function
-const rootReducer = combineReducers({ COUNTER_SWITCH });
+const rootReducer = combineReducers({ COUNTER_SWITCH, ADDRESS_SWITCH });
 
 export default rootReducer;
 
