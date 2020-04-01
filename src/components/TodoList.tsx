@@ -78,21 +78,25 @@ const TodoList = () => {
   };
 
   return (
-    <div>
-      <h1>오늘 뭐하지?</h1>
-      <form onSubmit={onSubmit}>
-        <input onChange={onChange} value={todoState.input} />
-        <button type="submit">추가하기</button>
-      </form>
-      {todoState.todoItems.map(todo => (
-        <TodoItem
-          key={todo.id}
-          done={todo.done}
-          onToggle={() => onToggle(todo.id)}
-          onRemove={() => onRemove(todo.id)}
-          text={todo.text}
-        />
-      ))}
+    <div className="container">
+      <div className="row">
+        <div className="col-sm-12">
+          <h1>오늘 뭐하지?</h1>
+          <form onSubmit={onSubmit}>
+            <input onChange={onChange} value={todoState.input} />
+            <button type="submit">추가하기</button>
+          </form>
+          {todoState.todoItems.map(todo => (
+            <TodoItem
+              key={todo.id}
+              done={todo.done}
+              onToggle={() => onToggle(todo.id)}
+              onRemove={() => onRemove(todo.id)}
+              text={todo.text}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
